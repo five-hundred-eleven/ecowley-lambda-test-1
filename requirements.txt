@@ -146,7 +146,6 @@ torchfile==0.1.0
 tornado==6.0.3
 tqdm==4.38.0
 traitlets==4.3.3
-ufw==0.36
 umap-learn==0.3.10
 unattended-upgrades==0.1
 Unidecode==1.1.1
