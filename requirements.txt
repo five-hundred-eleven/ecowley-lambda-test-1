@@ -82,7 +82,6 @@ numexpr==2.6.4
 numpy==1.17.4
 oauth==1.0.1
 olefile==0.45.1
-openshot-qt==2.4.1
 packaging==19.2
 pandas==0.25.3
 pandocfilters==1.4.2
