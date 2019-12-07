@@ -102,7 +102,6 @@ pycrypto==2.6.1
 pycups==1.9.73
 pycurl==7.43.0.1
 Pygments==2.4.2
-pygobject==3.26.1
 pyparsing==2.4.5
 pyproj==2.4.1
 PyQt5==5.13.2
