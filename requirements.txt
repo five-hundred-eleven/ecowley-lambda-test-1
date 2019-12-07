@@ -133,7 +133,6 @@ six==1.13.0
 sounddevice==0.3.14
 SoundFile==0.10.2
 soupsieve==1.9.4
-ssh-import-id==5.7
 systemd-python==234
 tables==3.4.2
 tensorboard==1.14.0
