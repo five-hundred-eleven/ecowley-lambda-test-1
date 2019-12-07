@@ -1,16 +1,32 @@
-from flask import Flask, render_template
+import os
+
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 
 
-app = Flask(__name__)
+app.layout = html.Div([
+    html.H2("Hello World!"),
+    dcc.Dropdown(
+        id="dropdown",
+        options=[{"label": x, "value": x} for x in ["LA", "NYC", "MTL"]],
+        value="LA",
+    ),
+    html.Div(id="display-value"),
+])
 
 
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-
-
+@app.callback(
+        dash.dependencies.Output("display-value", "children"),
+        [dash.dependencies.Input("dropdown", "value")],
+)
+def displayValue(value):
+    return f"You have selected \"{value}\""
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run_server(debug=True)
