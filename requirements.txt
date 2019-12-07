@@ -126,7 +126,6 @@ scour==0.36
 seaborn==0.8.0
 SecretStorage==2.3.1
 Send2Trash==1.5.0
-sgt-launcher==0.2.4
 Shapely==1.6.4.post2
 simplegeneric==0.8.1
 simplejson==3.13.2
