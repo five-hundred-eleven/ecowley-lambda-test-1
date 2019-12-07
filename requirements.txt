@@ -160,6 +160,5 @@ Werkzeug==0.16.0
 widgetsnbextension==3.5.1
 wrapt==1.11.2
 xcffib==0.5.1
-xkit==0.0.0
 zipp==0.6.0
 zope.interface==4.3.2
