@@ -108,7 +108,6 @@ PyQt5==5.13.2
 PyQt5-sip==12.7.0
 pyrsistent==0.15.5
 pyshp==2.1.0
-python-apt==1.6.4
 python-dateutil==2.8.1
 python-debian==0.1.32
 python-debianbts==2.7.2
