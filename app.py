@@ -4,6 +4,9 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 
+import numpy as np
+from plotly import graph_objects as go
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
@@ -20,12 +23,40 @@ app.layout = html.Div([
 ])
 
 
+
+def randInts():
+    return np.random.randint(0, 100, 100)
+
+
+points = {
+        "LA": go.Scatter(
+            x=randInts(),
+            y=randInts(),
+            marker={"color": "red"},
+        ),
+        "NYC": go.Scatter(
+            x=randInts(),
+            y=randInts(),
+            marker={"color": "blue"},
+        ),
+        "MTL": go.Scatter(
+            x=randInts(),
+            y=randInts(),
+            marker={"color": "green"},
+        ),
+}
+
+
+
 @app.callback(
         dash.dependencies.Output("display-value", "children"),
         [dash.dependencies.Input("dropdown", "value")],
 )
 def displayValue(value):
-    return f"You have selected \"{value}\""
+    return dcc.Graph(
+            id="points",
+            figure=go.Figure(data=points[value])
+    )
 
 
 if __name__ == "__main__":
