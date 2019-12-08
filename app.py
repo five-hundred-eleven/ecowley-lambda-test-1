@@ -19,7 +19,7 @@ app.layout = html.Div([
         options=[{"label": x, "value": x} for x in ["LA", "NYC", "MTL"]],
         value="LA",
     ),
-    html.Div(id="display-value"),
+    dcc.Graph(id="value-graph"),
 ])
 
 
@@ -32,16 +32,19 @@ points = {
         "LA": go.Scatter(
             x=randInts(),
             y=randInts(),
+            mode="markers",
             marker={"color": "red"},
         ),
         "NYC": go.Scatter(
             x=randInts(),
             y=randInts(),
+            mode="markers",
             marker={"color": "blue"},
         ),
         "MTL": go.Scatter(
             x=randInts(),
             y=randInts(),
+            mode="markers",
             marker={"color": "green"},
         ),
 }
@@ -49,14 +52,11 @@ points = {
 
 
 @app.callback(
-        dash.dependencies.Output("display-value", "children"),
+        dash.dependencies.Output("value-graph", "figure"),
         [dash.dependencies.Input("dropdown", "value")],
 )
 def displayValue(value):
-    return dcc.Graph(
-            id="points",
-            figure=go.Figure(data=points[value])
-    )
+    return go.Figure(data=points[value])
 
 
 if __name__ == "__main__":
