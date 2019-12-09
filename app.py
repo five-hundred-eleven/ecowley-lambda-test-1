@@ -21,10 +21,10 @@ app.layout = html.Div([
                 options=[{"label": x, "value": x} for x in ["LA", "NYC", "MTL"]],
                 value="LA",
             )
-        ], className="container five column"),
+        ], className="container four columns"),
         html.Div([
             dcc.Graph(id="value-graph"),
-        ], className="container five column"),
+        ], className="container eight columns"),
     ], className="container")
 ])
 
