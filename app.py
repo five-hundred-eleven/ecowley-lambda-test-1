@@ -14,12 +14,18 @@ server = app.server
 
 app.layout = html.Div([
     html.H2("Hello World!"),
-    dcc.Dropdown(
-        id="dropdown",
-        options=[{"label": x, "value": x} for x in ["LA", "NYC", "MTL"]],
-        value="LA",
-    ),
-    dcc.Graph(id="value-graph"),
+    html.Div([  
+        html.Div([  
+            dcc.Dropdown(
+                id="dropdown",
+                options=[{"label": x, "value": x} for x in ["LA", "NYC", "MTL"]],
+                value="LA",
+            )
+        ], class="container five column"),
+        html.Div([
+            dcc.Graph(id="value-graph"),
+        ], class="container five column"),
+    ], class="container")
 ])
 
 
