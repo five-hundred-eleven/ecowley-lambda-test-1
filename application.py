@@ -1,5 +1,6 @@
 import os
 
+from flask import Flask
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -8,8 +9,8 @@ import numpy as np
 from plotly import graph_objects as go
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-server = app.server
+application = Flask(__name__)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets, server=application)
 
 
 app.layout = html.Div([
@@ -66,4 +67,4 @@ def displayValue(value):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    application.run()
